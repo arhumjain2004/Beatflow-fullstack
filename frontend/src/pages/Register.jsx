@@ -21,7 +21,7 @@ export default function Register() {
     }
 
     try {
-      await API.post("/auth/register", form);
+      await API.post("/api/auth/register", form);
       alert("Registered successfully 🎉");
       navigate("/");
     } catch (err) {

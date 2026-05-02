@@ -21,8 +21,11 @@ export default function Upload() {
       formData.append("title", title);
 
       // ✅ No need to manually add token (interceptor already does it)
-      await API.post("/music/upload", formData);
-
+    await API.post("/api/music/upload", formData, {
+  headers: {
+    "Content-Type": "multipart/form-data",
+  },
+});
       alert("Uploaded successfully 🎉");
 
       setFile(null);
