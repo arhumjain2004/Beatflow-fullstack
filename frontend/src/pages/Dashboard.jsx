@@ -30,7 +30,7 @@ const userId = user?.id;
 
  const fetchMusic = async (pageNumber = 1) => {
   try {
-    const res = await API.get(`/music?page=${pageNumber}`);
+    const res = await API.get(`/api/music?page=${pageNumber}`);
 
     if (pageNumber === 1) {
       setMusic(res.data.musics);
@@ -49,7 +49,7 @@ const userId = user?.id;
 
   const handleDelete = async (id) => {
   try {
-    await API.delete(`/music/${id}`);
+await API.delete(`/api/music/${id}`);
 
     setMusic((prev) => prev.filter((m) => m._id !== id));
 
