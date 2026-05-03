@@ -5,6 +5,10 @@ const musicRoutes = require("./routes/music.routes")
 const app = express()
 const cors = require("cors");
 
+app.get("/", (req, res) => {
+  res.status(200).send("API is running 🚀");
+});
+
 app.use(cors({
   origin: [
     "http://localhost:5173",
