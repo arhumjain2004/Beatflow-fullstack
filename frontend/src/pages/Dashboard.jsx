@@ -168,10 +168,15 @@ await API.delete(`/api/music/${id}`);
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-semibold text-lg truncate">
-                    {m.title}
-                  </h3>
-
+                  <h3
+  className={`font-semibold text-lg truncate ${
+    currentSong?._id === m._id
+      ? "text-green-400"
+      : "text-white"
+  }`}
+>
+  {m.title}
+</h3>
                   {/* Artist */}
                   <p className="text-sm text-gray-400 truncate">
                     {m.artist?.username || "Unknown Artist"}
@@ -211,7 +216,7 @@ await API.delete(`/api/music/${id}`);
 
       {/* LEFT */}
       <div className="w-1/3">
-        <h3 className="font-semibold">{currentSong.title}</h3>
+        <h3 className="font-semibold text-green-400 text-lg">{currentSong.title}</h3>
         <p className="text-sm text-gray-400">
           {currentSong.artist?.username}
         </p>
